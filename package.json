@@ -1,0 +1,45 @@
+{
+  "name": "@baseland-io/logger",
+  "version": "0.0.1",
+  "description": "Baseland logger",
+  "main": "dist/logger.js",
+  "types": "dist/logger.d.ts",
+  "prepublish": "tsc",
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "lint": "tslint -p tsconfig.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/baseland-io/logger.git"
+  },
+  "keywords": [
+    "logger"
+  ],
+  "files": [
+    "lib/**/*"
+  ],
+  "author": "Developers <developers@baseland.io>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/baseland-io/logger/issues"
+  },
+  "homepage": "https://github.com/baseland-io/logger#readme",
+  "dependencies": {
+    "winston": "^3.8.1"
+  },
+  "devDependencies": {
+    "@types/node": "^18.7.14",
+    "@typescript-eslint/eslint-plugin": "^5.36.1",
+    "@typescript-eslint/parser": "^5.36.1",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-node": "^4.1.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-node": "^11.1.0",
+    "prettier": "^2.7.1",
+    "typescript": "^4.8.2"
+  }
+}
