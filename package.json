@@ -1,6 +1,6 @@
 {
   "name": "@baseland-io/logger",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Baseland logger",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -8,8 +8,7 @@
   "scripts": {
     "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "format": "prettier --write \"src/**/*.ts\"",
-    "lint": "tslint -p tsconfig.json"
+    "lint": "eslint --ignore-path .eslintignore --ext .js,.ts ."
   },
   "repository": {
     "type": "git",
@@ -17,9 +16,6 @@
   },
   "keywords": [
     "logger"
-  ],
-  "files": [
-    "lib/**/*"
   ],
   "author": "Developers <developers@baseland.io>",
   "license": "MIT",
@@ -31,15 +27,11 @@
     "winston": "^3.8.1"
   },
   "devDependencies": {
+    "@baseland-io/eslint-config-baseland": "^0.1.1",
     "@types/node": "^18.7.14",
-    "@typescript-eslint/eslint-plugin": "^5.36.1",
-    "@typescript-eslint/parser": "^5.36.1",
-    "eslint": "^7.32.0",
-    "eslint-config-airbnb": "^19.0.4",
-    "eslint-config-node": "^4.1.0",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-node": "^11.1.0",
-    "prettier": "^2.7.1",
+    "@typescript-eslint/eslint-plugin": "^5.36.2",
+    "@typescript-eslint/parser": "^5.36.2",
+    "eslint": "^8.23.0",
     "typescript": "^4.8.2"
   }
 }
