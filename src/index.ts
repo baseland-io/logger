@@ -1,4 +1,5 @@
 import winston, { format } from 'winston';
+import Config from './types/Config';
 
 const UNKNOWN_LABEL = 'UNKNOWN';
 const colorizer = format.colorize();
@@ -27,18 +28,23 @@ const consoleLogFormatter = format.printf((msg) => {
   return `${line} - ${message}`;
 });
 
-export const log = (filename: string) => winston.createLogger({
-  defaultMeta: {
-    module: filename.replace(process.cwd(), ''),
-  },
-  transports: [
-    new winston.transports.Console({
-      level: 'debug',
-      format: winston.format.combine(
-        format.timestamp({ format: 'YYYY-MM-DD HH:mm:ss' }),
-        format.errors({ stack: true }),
-        consoleLogFormatter,
-      ),
-    }),
-  ],
-});
+export const log = (filename: string, options: Config) => {
+  const _options = {
+    level: options.level || 'info',
+  };
+  return winston.createLogger({
+    defaultMeta: {
+      module: filename.replace(process.cwd(), ''),
+    },
+    transports: [
+      new winston.transports.Console({
+        level: _options.level,
+        format: winston.format.combine(
+          format.timestamp({ format: 'YYYY-MM-DD HH:mm:ss' }),
+          format.errors({ stack: true }),
+          consoleLogFormatter,
+        ),
+      }),
+    ],
+  });
+};

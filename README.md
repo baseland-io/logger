@@ -11,8 +11,10 @@ npm install --save @baseland-io/logger
 
 ```ts
 import {log} from '@baseland-io/logger';
-
-const logger = log(__filename); // /index.ts
+const options = {
+  level: 'debug', // default: `info`
+};
+const logger = log(__filename, options); // /index.ts
 
 logger.debug('Just a simple message');
 // 2022-09-03 21:44:34 [/index.ts] [DEBUG] [UNKNOWN] [UNKNOWN] - Just a simple message
