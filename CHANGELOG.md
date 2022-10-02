@@ -1,5 +1,9 @@
 # Change Log
 
+## v0.1.4 - 2022.10.02
+
+- Rebuilding (doh!)
+
 ## v0.1.3 - 2022.10.02
 
 - Adding `options` argument
