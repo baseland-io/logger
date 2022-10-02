@@ -1,5 +1,9 @@
 {
+  "root": true,
   "extends": [
     "@baseland-io/eslint-config-baseland"
-  ]
+  ],
+  "rules": {
+    "@typescript-eslint/no-extra-semi": "off"
+  }
 }
