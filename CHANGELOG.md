@@ -1,5 +1,9 @@
 # Change Log
 
+## v0.1.5 - 2022.10.02
+
+- Adding types-ish
+
 ## v0.1.4 - 2022.10.02
 
 - Rebuilding (doh!)

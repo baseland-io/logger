@@ -1,5 +1,17 @@
 import winston, { format } from 'winston';
-import Config from './types/Config';
+
+export interface Config {
+  level: string;
+}
+
+export interface LoggerParams {
+  label: string;
+  requestId: string;
+  message: string | Record<string, unknown>;
+  error?: string | Record<string, unknown>;
+}
+
+export type Logger = winston.Logger
 
 const UNKNOWN_LABEL = 'UNKNOWN';
 const colorizer = format.colorize();
@@ -28,7 +40,7 @@ const consoleLogFormatter = format.printf((msg) => {
   return `${line} - ${message}`;
 });
 
-export const log = (filename: string, options: Config) => {
+export const log = (filename: string, options: Config): Logger => {
   const _options = {
     level: options.level || 'info',
   };
