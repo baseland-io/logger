@@ -1,6 +1,10 @@
 # Change Log
 
-## v0.1.5 - 2022.10.02
+## v0.1.6 - 2023.02.09
+
+- Fixing `message` property to use correct types
+
+## v0.1.5 - 2023.02.09
 
 - Adding types-ish
 

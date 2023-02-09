@@ -7,8 +7,7 @@ export interface Config {
 export interface LoggerParams {
   label: string;
   requestId: string;
-  message: string | Record<string, unknown>;
-  error?: string | Record<string, unknown>;
+  message: string | Record<string, unknown> | Error;
 }
 
 export type Logger = winston.Logger
