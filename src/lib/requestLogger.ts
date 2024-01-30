@@ -54,6 +54,7 @@ const colorizeDuration = (duration: number): string => {
 
   return `\x1B[${durationColor}m${duration}ms\x1B[39m`;
 };
+
 /**
  * Service agnostic request logger.
  *
