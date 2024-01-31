@@ -90,7 +90,7 @@ const requestLogger = (logger: BaselandLogger, config: RequestConfig) => {
       const event: LogEvent = {
         label: 'request-logger',
         method: request.method,
-        url: request.url,
+        url: request.originalUrl,
         requestId: request.id || 'UNKNOWN',
         clientCaller: 'UNKNOWN',
         message: '',
@@ -105,7 +105,7 @@ const requestLogger = (logger: BaselandLogger, config: RequestConfig) => {
       }
 
       if (logClientCaller) {
-        event.clientCaller = request.get('client-caller') || 'UNKNOWN';
+        event.clientCaller = request.get('x-client-caller') || 'UNKNOWN';
       }
       // Durations are in milliseconds
       event.message = colorizeDuration(Math.round((endAt[0] - startAt[0]) * 1000 + (endAt[1] - startAt[1]) * 1e-6));
