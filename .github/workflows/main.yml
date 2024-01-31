@@ -8,7 +8,7 @@ on:
 
 jobs:
   run-pipelines:
-    name: Run linters
+    name: Run Pipelines
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false

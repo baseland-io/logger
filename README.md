@@ -1,5 +1,13 @@
-# logger
+# @baseland-io/logger
+[![Tests](https://github.com/baseland-io/logger/workflows/CI/badge.svg)](https://github.com/baseland-io/logger/actions)
+[![npm version](https://img.shields.io/npm/v/@baseland-io/logger.svg)](https://npmjs.org/package/@baseland-io/logger 'View this project on NPM')
+[![npm downloads](https://img.shields.io/npm/dm/@baseland-io/logger)](https://www.npmjs.com/package/@baseland-io/logger)
+
+
 Logging utility for Baseland projects
+
+- `log` - winston logger
+- `requestLogger` express middleware
 
 ## Installation
 
@@ -7,10 +15,10 @@ Logging utility for Baseland projects
 npm install --save @baseland-io/logger
 ```
 
-## Usage
+## `log` Usage
 
 ```ts
-import {log} from '@baseland-io/logger';
+import { log } from '@baseland-io/logger';
 const options = {
   level: 'debug', // default: `info`
 };
@@ -52,3 +60,24 @@ logger.error({
 //    at Module._compile (node:internal/modules/cjs/loader:1105:14)
 //    at ...
 ```
+
+## `requestLogger` Usage
+Logs a
+```ts
+import Express from 'express';
+const app = Express();
+app.use(requestLogger(logger, { logIpAddress: true }));
+
+// [2024-01-31 08:05:24] [/src/server/index.ts] [info] [request-logger] [1100d7] [192.168.1.1] [/good-url] [GET] [200] - 3ms
+// [2024-01-31 08:05:34] [/src/server/index.ts] [info] [request-logger] [692f11] [192.168.1.1] [/bad-url] [GET] [404] - 2ms
+```
+
+### Options
+| Property | Type | Default Value | Description |
+| --- | --- | --- | --- |
+| `logIpAddress` | `boolean` | `false` | Whether or not the remote client ip address should be printed in the log statement |
+| `logClientCaller` | `boolean` | `false` | Whether the `x-client-caller` header value should be printed in the log statement |
+
+# Todo
+
+- [ ] Better tests
