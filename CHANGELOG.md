@@ -1,5 +1,12 @@
 # Change Log
 
+## v2.0.0 - 2024.01.31
+
+- Adding `requestLogger` middleware
+- Adding colorized status codes
+- Adding colorized duration
+- General cleanup
+
 ## v0.1.6 - 2023.02.09
 
 - Fixing `message` property to use correct types
