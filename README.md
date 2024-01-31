@@ -1,5 +1,5 @@
 # @baseland-io/logger
-[![Tests](https://github.com/baseland-io/logger/workflows/CI/badge.svg)](https://github.com/baseland-io/logger/actions)
+[![Tests](https://github.com/baseland-io/logger/actions/workflows/main.yml/badge.svg)](https://github.com/baseland-io/logger/actions)
 [![npm version](https://img.shields.io/npm/v/@baseland-io/logger.svg)](https://npmjs.org/package/@baseland-io/logger 'View this project on NPM')
 [![npm downloads](https://img.shields.io/npm/dm/@baseland-io/logger)](https://www.npmjs.com/package/@baseland-io/logger)
 
